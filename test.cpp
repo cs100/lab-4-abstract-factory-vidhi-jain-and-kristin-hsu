@@ -29,34 +29,40 @@ int main () {
 	cin >> convertNum;
 	cout << endl;
 	
-	if (userinput == 'd'){
-		fPrints = new DoubleFactory();
-		cout << convertNum << ".0" << endl;
+		
+	if (userinput != 'd' || 'h' || 'b'){
+		cout << "ERROR! Unable to convert your number.\nPlease enter only d(double), h(hex), or b(binary)." << endl;
+		return 0;
 	}
 	
-	else if (userinput == 'h'){
-		fPrints = new HexFactory();
-    	cout << "0x" << hex << convertNum << '\n' ;
+	else {
+
+		if (userinput == 'd'){
+			fPrints = new DoubleFactory();
+			cout << convertNum << ".0" << endl;
+		}
+		
+		else if (userinput == 'h'){
+			fPrints = new HexFactory();
+	    	cout << "0x" << hex << convertNum << '\n' ;
+		}
+		
+		else if (userinput == 'b'){
+			fPrints = new BinaryFactory();
+	    	while (convertNum > 0){
+	    		arr[i] = convertNum%2;
+	    		++i;
+	    		convertNum/=2;
+	    	}
+	    	
+	    	for (int j = i-1; j >= 0; --j){
+	    		cout << arr[j];
+	    	}
+	    	
+	    	cout << endl;
+		}
 	}
-	
-	else if (userinput == 'b'){
-		fPrints = new BinaryFactory();
-    	while (convertNum > 0){
-    		arr[i] = convertNum%2;
-    		++i;
-    		convertNum/=2;
-    	}
-    	
-    	for (int j = i-1; j >= 0; --j){
-    		cout << arr[j];
-    	}
-    	
-    	cout << endl;
-	}
-	
-	else if (userinput != 'd' || 'h' || 'b'){
-		cout << "invalid Input" << endl;
-	}
+
 	
 	
  //   Op* op1 = new Op(5);
