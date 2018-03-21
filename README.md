@@ -1,4 +1,4 @@
-#**Completed and archived in Winter 2018
+# **Completed and archived in Winter 2018
 
 
 # Abstract Factory Pattern
