@@ -1,3 +1,6 @@
+#**Completed and archived in Winter 2018
+
+
 # Abstract Factory Pattern
 ## Author: Brian Crites
 **You *must* work in a group of two for this lab**
